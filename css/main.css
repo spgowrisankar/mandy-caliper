@@ -1,22 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap');
 
 @font-face {
-    font-family: 'Avant oblique ', sans-serif;
+    font-family: "Avant Oblique";
     src: url(../fonts/ITCAvantGardeStd-BkObl.woff) format('woff');
     src: url(../fonts/ITCAvantGardeStd-BkObl.woff2) format('woff2');
 }
 @font-face {
-    font-family: 'Avant Bold', sans-serif;
+    font-family: 'Avant Bold';
     src: url(../fonts/ITCAvantGardeStd-Bold.woff) format('woff');
     src: url(../fonts/ITCAvantGardeStd-Bold.woff2) format('woff2');
 }
 @font-face {
-    font-family: 'Avant Demi', sans-serif;
+    font-family: 'Avant Demi';
     src: url(../fonts/ITCAvantGardeStd-Demi.woff) format('woff');
     src: url(../fonts/ITCAvantGardeStd-Demi.woff2) format('woff2');
 }
 @font-face {
-    font-family: 'Avant Medium', sans-serif;
+    font-family: 'Avant Medium';
     src: url(../fonts/ITCAvantGardeStd-Md.woff) format('woff');
     src: url(../fonts/ITCAvantGardeStd-Md.woff2) format('woff2');
 }
@@ -35,7 +35,6 @@
  }
  body {
      font-family: 'Roboto', sans-serif;
-     line-height: 1.25;
  }
 a {
   text-decoration: none;
@@ -49,7 +48,19 @@ li {
     margin-left: auto;
     margin-right: auto;
 }
-
+.sub-link {
+    text-decoration: underline;
+}
+.large-blue-button {
+    text-decoration:none;
+    border-radius: 25px;
+    font-family: 'Avant Demi';
+    color:#FFFFFF;
+    background-color: #004885;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17px
+}
 /* End Of Utility */
 
 /* Start Of Alert-Bar */
@@ -64,7 +75,7 @@ li {
     flex-grow: 1;
 }
 .alert-bar-content {
-    font-family: 'Avant oblique ', sans-serif;
+    font-family: 'Avant Demi';
     color: #ffff;
     font-weight: 500;
     font-size: 14px;
@@ -72,11 +83,12 @@ li {
     letter-spacing: 0.62px
 }
 .alert-bar-link {
-    font-family: "Avant Garde Gothic Std";
+    font-family: 'Avant Demi';
     color: #ffff;
     font-weight: 500;
     font-size: 14px;
     line-height: 17px;
+    letter-spacing: 0.62px
 }
 .alert-bar .alert-bar-link {
     text-decoration: underline;
@@ -90,29 +102,100 @@ li {
     display: block;
     color: #ffff;
 }
+/* Start Of Media Qyery */
+    @media screen and (max-width: 371px) {
+        .alert-bar-link {
+            display: block;
+        }
+    }
+/* End OF Media Qyery */
+
 /* End Of Alert-Bar */
 /* Start Of Header */
+
 .main-header-wrapper {
     display: flex;
     justify-content:space-between;
     flex-wrap: wrap;
     align-items: center;
+    position: relative;
     padding: 30px 15px;
 }
+/* Start Of hambuger Menu */
+.hamburger-wrapper {
+    display: none;
+    background-color: #ffff;
+}
+.hamburger-wrapper .menu-icon {
+    padding: 15px 10px;
+    display: block;
+    background-color: #ffff;
+    cursor: pointer;
+}
+.menu-icon .burger-icon {
+    position: relative;
+    width: 22px;
+    height:3px;
+    background-color:#004885;
+    display: block;
+    transition: 0.2s ease;
+}
+.menu-icon .burger-icon::before ,
+.menu-icon .burger-icon::after{
+    position: absolute;
+    display: block;
+    width: 100%;
+    height:100%;
+    top: 8px;
+    background-color: #004885;
+    content: '';
+}
+.menu-icon .burger-icon::before {
+    top: 8px;
+}
+.menu-icon .burger-icon::after {
+    top: -8px;
+}
+.menu-button:checked ~ .menu-icon .burger-icon {
+    background: transparent;
+}
+.menu-button {
+    display: none;
+}
+.menu-button:checked ~ .menu-icon .burger-icon::before {
+    transform: rotate(45deg);
+    transition: 0.4s ease-out;
+}
+.menu-button:checked ~ .menu-icon .burger-icon::after {
+    transform: rotate(-45deg);
+    transition: 0.4s ease-out;
+}
+.menu-button:checked ~ .menu-icon .burger-icon::before ,
+.menu-button:checked ~ .menu-icon .burger-icon::after {
+    top:0;
+}
+/* End Of hambuger-menu */
 .main-navbar {
     width: 40%;
     display: flex;
+    flex-wrap: wrap;
 }
 .nav-section .nav-link {
     padding: 0 10px;
 }
 .nav-section .nav-tag {
+    font-family: 'Avant Demi';
     font-size: 16px;
+    font-weight: 500;
     padding: 12px 22px;
     border-radius: 20px;
-    font-weight: 500;
     color: #004885;
     letter-spacing: 0.62px;
+}
+.nav-section .active-tag {
+    background-color: #004885;
+    color: #ffff;
+    transition: 0.4s ease;
 }
 .nav-section .nav-tag:hover {
     background-color: #004885;
@@ -125,25 +208,234 @@ li {
     flex-wrap: wrap;
     align-self: center;
 }
-.main-icon {
-    width: 40%;
+.sub-menu {
+    position: absolute;
+    width: 100%;
+    top:100%;
+    display: flex;
+    justify-content: space-around;
 }
-.main-icon-right {
+.sub-menu .col {
+    background: #E7F5FB;
+    box-shadow: -1px 2px 2px 0 rgba(0,0,0,0.2);
+}
+.sub-menu .col-right {
+    display: flex;
+    flex-direction: column;
+    background: #FBC890;
+    box-shadow: -1px 2px 2px 0 rgba(0,0,0,0.2);
+}
+.col-right-heading {
+    flex-grow: 1;
+    color: #004885;
+    font-family: "Avant Demi";
+    font-size: 24px;
+    font-weight: 300;
+    letter-spacing: 0;
+    line-height: 34px;
+    text-align: center;
+}
+.col-right-normal {
+    color: #004885;
+    font-family: "Avant Demi";
+    font-style: oblique;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: 34px;
+    text-align: center;
+}
+.col-right-content {
+    flex-grow: 3;
+    color: #004885;
+    font-family: "Avant Demi";
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 1.6px;
+    line-height: 19px;
+    text-align: center;
+    padding: 10px 35px;
+}
+.sub-menu .col img {
+    max-height: 200px;
+    max-width: 270px;
+}
+.sub-menu .card-1 img {
+    padding-left: 44px;
+    padding-right: 43px;
+    padding-bottom: 38px;
+}
+.sub-menu .card-2 img {
+    padding-left: 38px;
+    padding-right: 40px;
+}
+.sub-menu .card-3 img {
+    padding-left: 75px;
+    padding-right: 72px;
+}
+.sub-menu-heading {
+    color: #004885;
+    text-align: center;
+    font-family: 'Avant Demi';
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 0.45px;
+    line-height: 22px;
+    padding: 21px 31px;
+}
+.col-right .large-blue-button {
+    flex-grow: 2;
+    padding: 10px 20px;
+}
+.main-icon {
     display: flex;
     justify-content: flex-end;
+    align-self: center;
+    width: 40%;
 }
 .main-icon .icon-link {
-    padding:0 10px;
+    padding:5px 20px;
+    border-radius: 10px;
+}
+.main-icon .icon-link:hover {
+    opacity: 0.8;
+    transition: 0.2s ;
+}
+.main-icon img {
+    height:26px;
+}
+/* End Of Header */
+/* Start Of Media Qyery */
+    /* @media screen and (max-width: 351px) {
+        .main-header-wrapper {
+            display: flex;
+            justify-content: flex-start;
+        }
+        .hamburger-wrapper{
+            display: flex;
+        }
+        .main-navbar {
+            width:30%;
+        }
+        .nav-section {
+            display: none;
+        }
+        .nav-icon {
+            display: none;
+        } */
+/* End OF Media Qyery */
+/* Start Of Footer */
 
+.main-footer {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 30px;
+    padding-bottom: 90px;
 }
-.main-icon .nav-icon {
-    font-size: 26px;
+.main-footer-left {
+    width: 55%;
+}
+.main-footer .main-footer-heading {
+    display: flex;
+    justify-content: space-between;
+}
+.main-footer-heading .footer-heading-items {
+    font-family: 'Avant Demi';
+    font-size: 15px;
+    font-weight: bold;
+    color: #005292;
+    letter-spacing: 0.5px;
+    line-height: 19px;
+}
+.footer-items{
+    padding: 0.313rem 0;
+}
+ .footer-item-list {
     color: #004885;
-    padding: 5px 7px;
-    border-radius: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0;
+    line-height: 19px;
 }
-.main-icon .nav-icon:hover {
-    background-color: orange;
+
+.main-footer-right-heading {
+    color: #005292;
+    font-family: 'Avant Demi';
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 26px;
+    padding-bottom: 20px;
+}
+.footer-form {
+    padding-bottom: 20px;
+}
+.form-items {
+    display: flex;
+    justify-content: space-between;
+}
+input[type = "email"]{
+    height: 43px;
+    width: 240px;
+    border: 1px solid #004885;
+    background-color: #E6F5FB;
+    padding-right: 1px;
+}
+input[type = "email"]::placeholder {
+    font-family: 'Roboto', sans-serif;
+    opacity: 0.5;
+    color: #004885;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 0;
+}
+.form-button {
+    display: inline-block;
+    outline: none;
+    border:none;
+    background-color:#004885;
     color: #ffff;
-    transition: 0.4s ease;
+    font-family: 'Avant Demi';
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px 20px;
+}
+.social-icons {
+    display: flex;
+}
+.social-icons .social-items {
+    height: 23px;
+    width: 23px;
+    padding-right: 10px;
+}
+.sub-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+.sub-footer-left {
+    display: flex;
+    align-items: center;
+}
+.sub-footer-items {
+    display: flex;
+}
+.sub-footer-links{
+    padding: 0 15px;
+}
+.sub-footer-sublink {
+    padding: 0 10px;
+}
+.bottom-footer{
+    background-color: #C9EEFD;
+    width: 100%;
+}
+.bottom-footer-content {
+    color: #004885;
+    font-family: 'Roboto', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0;
+    line-height: 13px;
+    text-align: center;
+    padding: 30px;
 }
