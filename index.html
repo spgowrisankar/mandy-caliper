@@ -21,6 +21,7 @@
         </div>
     </div>
     <!-- End Of Alert-Bar -->
+    <!-- Start Of Header -->
     <header>
         <div class="header-wrapper">
             <div class="main-header-wrapper">
@@ -55,8 +56,15 @@
                                 </div>
                             </div>
                         </li>
-                        <li class="nav-link"><a href="#" class="nav-tag">About</a></li>
-                        <li class="nav-link"><a href="#" class="nav-tag">Wholesale</a></li>
+                        <li class="nav-link"><a href="#" class="nav-tag tag-line">About</a>
+                            <div class="dropdown-menu">
+                                <div class="dropdown-item">
+                                    <a class="dropdown-list" href="#">Our Team</a>
+                                    <a class="dropdown-list" href="#">Quality</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-link"><a href="#" class="nav-tag tag-line">Wholesale</a></li>
                     </ul>
                 </nav>
                 <div class="main-logo">
@@ -73,8 +81,64 @@
         </div>
     </header>
 <!-- End Of header -->
-<section style="margin:500px">
-
+<!-- Start Of Header -->
+<section class="banner">
+    <div class="banner-wrapper">
+        <div class="banner-cover banner-cover-1">
+            <div class="banner-content-block">
+                <div class="banner-content">
+                    <h1 class="banner-heading">A powerful CBD powder you can mix into <span class="heading-normal">any food or drink.</span></h1>
+                    <a class="large-blue-button" href="#">Shop Now</a>
+                </div>
+            </div>
+        </div>
+        <div class="banner-cover banner-cover-2">
+            <div class="banner-content-block">
+                <div class="banner-content">
+                    <h1 class="banner-heading">Lorem ipsum dolor sit <span class="heading-normal">aanim id est laborum.</span></h1>
+                    <a class="large-blue-button" href="#">Shop Now</a>
+                </div>
+            </div>
+        </div>
+        <div class="banner-cover banner-cover-3">
+            <div class="banner-content-block">
+                <div class="banner-content">
+                    <h1 class="banner-heading">Take what you want, when you want it..<span class="heading-normal"> Faster absorption.</span></h1>
+                    <a class="large-blue-button" href="#">Shop Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Of Banner -->
+<!-- Start OF Description Banner -->
+<section class="description">
+    <div class="description-wrapper">
+        <div class="desc-col desc-section-1">
+            <div class="desc-background">
+                <div class="desc-count"><span class="counter">4.5</span>x</div>
+            </div>
+            <div class="desc-content-cover">
+            <span class="desc-content">Better and Faster absorption vs. oil soluble CBD</span>
+            </div>
+        </div>
+        <div class="desc-col desc-section-2">
+            <div class="desc-background">
+                <div class="desc-count"> <span class="counter">20 </span><span class="desc-count-mg">mg</span></div>
+            </div>
+            <div class="desc-content-cover">
+                <span class="desc-content">Take what you want, when you want, where you want.</span>
+            </div>
+        </div>
+        <div class="desc-col desc-section-3">
+            <div class="desc-background">
+                <div class="desc-icon"> <img src="./images/Test Tube.svg" alt=""> </div>
+            </div>
+            <div class="desc-content-cover">
+                <span class="desc-content">Passes rigorous purity, potency, and flavor testing.</span>
+            </div>
+        </div>
+    </div>
 </section>
 <!-- Start Of Footer -->
     <footer>
@@ -108,9 +172,14 @@
                     </ul>
                     </div>
                     <div class="main-footer-right">
-                        <div class="main-footer-right-heading">
+                        <div class="main-footer-right-heading heading-desktop">
                         Be the first to know about Caliper CBD.
                         </div>
+                        <div class="heading-mobile">
+                        <p>Be the first to know about Caliper </p>
+                        <p>CBD news, discounts and more.</p>
+                        </div>
+
                         <div class="footer-form">
                             <form class="form-items" action="#" method="#">
                             <input type="email" name="email" placeholder=" Enter your email ">
@@ -136,8 +205,8 @@
                         </div>
                         <div>
                             <ul class="sub-footer-items">
-                                <li class="sub-footer-links"><a href="#" class="footer-item-list">Terms of Service </a></li>
-                                <li class="sub-footer-links"><a href="#" class="footer-item-list">Privacy Policy</a></li>
+                                <li class="sub-footer-links sub-footer-mobile"><a href="#" class="footer-item-list">Terms of Service </a></li>
+                                <li class="sub-footer-links sub-footer-mobile"><a href="#" class="footer-item-list">Privacy Policy</a></li>
                                 <li class="sub-footer-sublink"> <span class="footer-item-list">Caliper CBD is a trademark of</span> <a href="#" class="footer-item-list sub-link">Caliper Foods</a></li>
                             </ul>
                         </div>
@@ -152,7 +221,7 @@
         </div>
         <div class="bottom-footer">
             <div class="bottom-footer-content">
-            <em>FDA Disclaimer: These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose,<br> treat, cure or prevent any disease.</em>
+            <em>FDA Disclaimer: These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure or prevent any disease.</em>
             </div>
         </div>
     </footer>
@@ -162,5 +231,7 @@
     <script src="https://kit.fontawesome.com/cce6f8b470.js" crossorigin="anonymous"></script>
     <script src="./js/slick.js"></script>
     <script src="./js/main.js"></script>
+    <script src="./js/jquery.counterup.min.js"></script>
+    <script src="./js/jquery.waypoints.min.js"></script>
 </body>
 </html>
