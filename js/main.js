@@ -1,5 +1,16 @@
 var $ = window.jQuery;
 
+// Accordion
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i=0; i < acc.length; i++ ) {
+    acc[i].onclick = function(){
+        this.nextElementSibling.classList.toggle("show");
+    }
+}
+// Accordion
+
 $(document).ready(function(){
     $('.alert-close-link').on('click', function(){
         $('.alert-bar').fadeOut()
@@ -13,6 +24,8 @@ $(document).ready(function(){
         menu.style.display = "none"
         }
     });
+
+    // Slick-Js
     $('.banner-wrapper').slick({
         infinite:true,
         dots:true,
@@ -28,8 +41,12 @@ $(document).ready(function(){
         prevArrow:"<img class='a-left control-c prev slick-prev' src='./images/Left.svg'>",
         nextArrow:"<img class='a-right control-c next slick-next' src='./images/Right.svg'>"
     });
+    // Slick-Js
+
+    // Counter-Js
     $('.counter').counterUp({
     delay: 20,
     time: 1000
     });
+    // Counter-Js
 })
