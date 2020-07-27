@@ -1,14 +1,17 @@
 var $ = window.jQuery;
 
 // Accordion
-var acc = document.getElementsByClassName("accordion");
-var i;
+    // var acc = document.getElementsByClassName("accordion");
+    // var i;
+    //
+    // for (i=0; i < acc.length; i++ ) {
+    //     acc[i].onclick = function(){
+    //
+    //         this.nextElementSibling.classList.toggle("active");
+    //     }
+    // }
 
-for (i=0; i < acc.length; i++ ) {
-    acc[i].onclick = function(){
-        this.nextElementSibling.classList.toggle("show");
-    }
-}
+
 // Accordion
 
 $(document).ready(function(){
@@ -22,6 +25,16 @@ $(document).ready(function(){
         }
         else {
         menu.style.display = "none"
+        }
+    });
+
+    $('.accordion').on('click',function(){
+        if ( $(this).closest('.accordion-section').hasClass('active') ) {
+            $(this).closest('.accordion-section').removeClass('active').find('.panel-wrapper').slideUp();
+        }
+        else {
+            $('.accordion').closest('.accordion-section').removeClass('active').find('.panel-wrapper').slideUp();
+            $(this).closest('.accordion-section').addClass('active').find('.panel-wrapper').slideDown();
         }
     });
 
@@ -49,5 +62,6 @@ $(document).ready(function(){
     time: 1000
     });
     // Counter-Js
+
 
 })

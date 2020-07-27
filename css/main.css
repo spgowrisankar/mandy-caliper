@@ -230,14 +230,13 @@ li {
     background: #f2a665;
     transition: 0.4s ease;
 }
-
  /* Dropdown */
  .drop-menu {
     position: absolute;
     max-width: 150px;
     padding: 15px 50px 15px 20px;
     top: 70px;
-    left: 130px;
+    left: 125px;
     box-shadow: 0 5px 6px -1px rgba(0, 0, 0, 0.17);
     background-color: #ffff;
     z-index: 2;
@@ -473,7 +472,7 @@ li {
 }
 .banner .large-blue-button {
     font-size: 16px;
-    padding: 17px 45px;
+    padding: 17px 43px;
 }
 .banner .large-blue-button:hover {
     background-color: #f2a665;
@@ -487,6 +486,7 @@ li {
     color:  #004885;
     font-size: 40px;
 }
+
 @media screen and  (min-width: 600px) {
     .banner-heading {
         font-size: 32px;
@@ -743,8 +743,7 @@ li {
 }
 .gallery-button .large-blue-button {
     font-size: 16px;
-    line-height: 19px;
-    padding: 17px 55px;
+    padding: 17px 48px;
 }
 .gallery-button .large-blue-button:hover {
     background-color: #f2a665;
@@ -812,13 +811,12 @@ li {
     font-size: 16px;
     letter-spacing: 0;
     line-height: 24px;
+}
+.panel-wrapper {
     display: none;
 }
-.panel-wrapper.show {
+ .panel-wrapper.active {
     display: block;
-}
-.panel-wrapper.close {
-    display: none;
 }
 
 .showcase .bar-image {
@@ -876,8 +874,7 @@ li {
     font-size: 16px;
     font-weight: bold;
     letter-spacing: 0;
-    line-height: 19px;
-    padding: 17px 41px;
+    padding: 17px 26px;
 }
 .subscription-content .large-blue-button:hover {
     background-color: #f2a665;
@@ -888,11 +885,12 @@ li {
 /* Start Of Featured-banner-Section */
 .featured-banner {
     display: flex;
+    flex-flow: column;
     justify-content:space-between;
     align-items: center;
-    height: 320px;
     background: url('../images/Featured-background.svg') no-repeat center center/cover;
     margin: 40px 20px 0 20px;
+    padding: 30px 0;
 }
 .featured-banner .left-image {
     display: flex;
@@ -904,7 +902,7 @@ li {
     width: 30%;
 }
 .featured-banner-content {
-    width: 30%;
+    width: 100%;
     text-align: center;
 }
 .featured-banner-content .featured-heading {
@@ -943,12 +941,35 @@ li {
     right:0;
     bottom: 0;
 }
+/* Media Query */
+
+@media screen and  (min-width: 600px) {
+    .banner-heading {
+        font-size: 32px;
+    }
+}
+@media screen and  (min-width: 800px) {
+    .banner-heading {
+        font-size: 40px;
+    }
+}
+@media screen and  (min-width: 1000px) {
+    .featured-banner {
+        flex-direction: row;
+        height: 320px;
+        margin: 40px 20px 0 20px;
+    }
+    .featured-banner-content {
+        width: 30%;
+    }
+}
+
 /* End Of Featured-banner-Section */
 /* Start Of Footer */
 .main-footer {
     display: flex;
     justify-content: space-between;
-    padding: 80px 0;
+    padding: 30px 0;
 }
 .main-footer-left {
     width: 60%;
@@ -1110,6 +1131,24 @@ input[type = "email"]::placeholder {
     padding: 30px 0;
 }
 /* End Of Footer */
+
+@media screen and  (min-width: 600px) {
+    .banner-heading {
+        font-size: 32px;
+    }
+}
+@media screen and  (min-width: 800px) {
+    .banner-heading {
+        font-size: 40px;
+    }
+}
+@media screen and  (min-width: 1000px) {
+    .main-footer {
+        display: flex;
+        justify-content: space-between;
+        padding: 80px 0;
+    }
+}
 /* Start Of Media-Query */
     /* @media screen and  (min-width:320px) {
         .main-footer {
